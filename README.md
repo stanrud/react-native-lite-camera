@@ -17,14 +17,27 @@ Perfect for developers who need simple camera functionality without heavy depend
 npm install react-native-lite-camera
 ```
 
-## Usage
+## 📲 Usage Example
 
 ```js
-import LiteCamera from "react-native-lite-camera";
+import React from 'react';
+import { View, Button } from 'react-native';
+import { LiteCamera, useCamera } from 'react-native-lite-camera';
 
-// ...
+export default function App() {
+  const { takePhoto, isRecording, startRecording, stopRecording } = useCamera();
 
-const result = await LiteCamera.multiply(3, 7);
+  return (
+    <View style={{ flex: 1 }}>
+      <LiteCamera style={{ flex: 1 }} />
+      <Button title="Take Photo" onPress={takePhoto} />
+      <Button
+        title={isRecording ? 'Stop Recording' : 'Start Recording'}
+        onPress={isRecording ? stopRecording : startRecording}
+      />
+    </View>
+  );
+}
 ```
 
 ## Contributing
