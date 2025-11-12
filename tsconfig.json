@@ -26,5 +26,11 @@
     "strict": true,
     "target": "ESNext",
     "verbatimModuleSyntax": true
-  }
+  },
+  "include": [
+    "src",
+    "babel.config.js",
+    "react-native.config.js"
+  ],
+  "exclude": ["node_modules", "example"]
 }
